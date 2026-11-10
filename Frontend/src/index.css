@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.10), transparent 26%),
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent 22%),
+    linear-gradient(180deg, #f8fbff 0%, #f4f7fb 100%);
+  color: #0f172a;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-200/60 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-200/70 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-blue-200 bg-white px-6 py-3 font-semibold text-blue-700 shadow-sm transition-all duration-200 hover:border-blue-300 hover:bg-blue-50;
+  }
+  .card {
+    @apply rounded-3xl border border-slate-200/70 bg-white/90 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur;
+  }
+  .glass {
+    @apply border border-white/40 bg-white/70 backdrop-blur-xl;
+  }
+  .panel {
+    @apply rounded-3xl border border-slate-200/80 bg-white shadow-[0_18px_50px_rgba(15,23,42,0.08)];
+  }
+  .field {
+    @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10;
+  }
+  .section-shell {
+    @apply rounded-[28px] border border-slate-200/70 bg-white/95 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)];
+  }
+  .pill-tab {
+    @apply inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 transition-all hover:border-blue-200 hover:text-blue-700;
+  }
+  .pill-tab-active {
+    @apply border-blue-200 bg-blue-50 text-blue-700 shadow-sm;
+  }
+  .metric-card {
+    @apply rounded-2xl border border-slate-200/80 bg-white px-4 py-4 shadow-sm;
+  }
+  .terminal {
+    @apply rounded-[28px] border border-slate-800/80 bg-slate-950 text-slate-100 shadow-[0_32px_80px_rgba(15,23,42,0.35)];
+  }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+.freshness-now { background: linear-gradient(135deg, #10b981, #059669); }
+.freshness-hot { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.freshness-today { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.freshness-old { background: linear-gradient(135deg, #94a3b8, #64748b); }
